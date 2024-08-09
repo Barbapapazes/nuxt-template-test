@@ -3,7 +3,7 @@ import { setup, createPage } from "@nuxt/test-utils/e2e";
 
 describe("App", async () => {
   await setup({
-    host: process.env.CI ?? "http://localhost:3000",
+    host: process.env.CI ? undefined : "http://localhost:3000",
   });
 
   test("contains the title 'Welcome to Nuxt!'", async () => {
